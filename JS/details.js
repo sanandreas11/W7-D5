@@ -23,7 +23,7 @@ const productId = URLparameters.get("id") // '67dbe830e205930015653b39'
 // sarà una GET molto specifica, in cui inserirò l'ID del concerto nell'URL!
 const productURL = "https://striveschool-api.herokuapp.com/api/product/"
 
-const getConcertDetails = function () {
+const getProductDetails = function () {
   fetch(productURL + "/" + productId, {
     authorization:
       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2RkMmNlODM4MzRiZjAwMTUwMDA3MDQiLCJpYXQiOjE3NDI1NDgyMDAsImV4cCI6MTc0Mzc1NzgwMH0.z9Wd2GYOB30LZjWyXh0Ps2heZFU2_Gbo5URGePQRiDE",
@@ -38,7 +38,6 @@ const getConcertDetails = function () {
     })
     .then((data) => {
       console.log("DETTAGLI EVENTO", data)
-      //   riempio i dettagli mancanti della card
       const name = document.getElementById("name")
       const description = document.getElementById("description")
       const brand = document.getElementById("brand")
@@ -55,11 +54,11 @@ const getConcertDetails = function () {
     })
 }
 
-const editConcert = function () {
+const editProduct = function () {
   location.assign("./backoffice.html?id=" + productId)
 }
 
-const deleteConcert = function () {
+const deleteProduct = function () {
   // --- WARNING ---
   // stiamo per eliminare il concerto
   fetch(productURL + "/" + productId, {
@@ -82,7 +81,7 @@ const deleteConcert = function () {
     })
 }
 
-getConcertDetails()
+getProductDetails()
 
 // GET su eventsURL --> torna TUTTI gli oggetti in un array
 // GET su eventsURL + id --> torna UN oggetto, quello dotato di quell'id
