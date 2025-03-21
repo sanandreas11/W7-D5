@@ -37,7 +37,7 @@ const getProductDetails = function () {
       }
     })
     .then((data) => {
-      console.log("DETTAGLI EVENTO", data)
+      console.log("DETTAGLI PRODOTTO", data)
       const name = document.getElementById("name")
       const description = document.getElementById("description")
       const brand = document.getElementById("brand")
@@ -69,7 +69,7 @@ const deleteProduct = function () {
     .then((response) => {
       if (response.ok) {
         // abbiamo eliminato il concerto
-        alert("CONCERTO ELIMINATO")
+        alert("PRODOTTO ELIMINATO")
         // riportiamo l'utente in home
         location.assign("./index.html") // riportiamo l'utente in home
       } else {
