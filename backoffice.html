@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eneboh</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-black">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light" href="#">Eneboh</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mb-2 mb-lg-0 me-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-light"
+                  aria-current="page"
+                  href="./index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="./backoffice.html"
+                  >Backoffice</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="flex-grow-1 bg-dark">
+      <h1 class="text-center text-light">Eneboh</h1>
+      <h2 class="text-center text-light">Amministrazione</h2>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col col-12 col-lg-6 col-md-8">
+            <form class="my-3" id="event-form">
+              <div class="mb-3">
+                <label for="name" class="form-label text-light"
+                  >Nome Prodotto</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  id="name"
+                  aria-describedby="nameHelp"
+                  placeholder="Balatro"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="description" class="form-label text-light"
+                  >Descrizione Prodotto</label
+                >
+                <textarea
+                  class="form-control"
+                  required
+                  id="description"
+                  aria-describedby="descriptionHelp"
+                  placeholder="The addicting card game for you to enjoy"
+                  rows="5"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="brand" class="form-label text-light"
+                  >Brand Prodotto</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  id="brand"
+                  aria-describedby="brandHelp"
+                  placeholder="LocalThunk"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="price" class="form-label text-light"
+                  >Prezzo Prodotto</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  required
+                  id="price"
+                  aria-describedby="priceHelp"
+                  placeholder="10"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="image" class="form-label text-light"
+                  >Url Immagine</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  id="image"
+                  aria-describedby="imageHelp"
+                  placeholder="https://upload.wikimedia.org/wikipedia/en/8/89/Balatro_cover.jpg"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Crea!</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-black text-center py-3">
+      <p class="m-0 text-light">
+        Andrea Nika - <span class="text-light" id="year"></span>
+      </p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./JS/backoffice.js"></script>
+  </body>
+</html>
