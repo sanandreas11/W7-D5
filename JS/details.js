@@ -24,9 +24,11 @@ const productId = URLparameters.get("id") // '67dbe830e205930015653b39'
 const productURL = "https://striveschool-api.herokuapp.com/api/product/"
 
 const getProductDetails = function () {
-  fetch(productURL + "/" + productId, {
-    authorization:
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2RkMmNlODM4MzRiZjAwMTUwMDA3MDQiLCJpYXQiOjE3NDI1NDgyMDAsImV4cCI6MTc0Mzc1NzgwMH0.z9Wd2GYOB30LZjWyXh0Ps2heZFU2_Gbo5URGePQRiDE",
+  fetch(productURL + productId, {
+    headers: {
+      authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2RkMmNlODM4MzRiZjAwMTUwMDA3MDQiLCJpYXQiOjE3NDI1NDgyMDAsImV4cCI6MTc0Mzc1NzgwMH0.z9Wd2GYOB30LZjWyXh0Ps2heZFU2_Gbo5URGePQRiDE",
+    },
   })
     .then((response) => {
       console.log("response", response)
@@ -63,8 +65,10 @@ const deleteProduct = function () {
   // stiamo per eliminare il concerto
   fetch(productURL + "/" + productId, {
     method: "DELETE",
-    authorization:
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2RkMmNlODM4MzRiZjAwMTUwMDA3MDQiLCJpYXQiOjE3NDI1NDgyMDAsImV4cCI6MTc0Mzc1NzgwMH0.z9Wd2GYOB30LZjWyXh0Ps2heZFU2_Gbo5URGePQRiDE",
+    headers: {
+      authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2RkMmNlODM4MzRiZjAwMTUwMDA3MDQiLCJpYXQiOjE3NDI1NDgyMDAsImV4cCI6MTc0Mzc1NzgwMH0.z9Wd2GYOB30LZjWyXh0Ps2heZFU2_Gbo5URGePQRiDE",
+    },
   })
     .then((response) => {
       if (response.ok) {
@@ -82,9 +86,3 @@ const deleteProduct = function () {
 }
 
 getProductDetails()
-
-// GET su eventsURL --> torna TUTTI gli oggetti in un array
-// GET su eventsURL + id --> torna UN oggetto, quello dotato di quell'id
-// POST su eventsURL --> crea un NUOVO oggetto
-// DELETE su eventsURL + id --> elimina un oggetto
-// PUT su eventsURL + id --> modifica un oggetto
